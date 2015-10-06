@@ -5,6 +5,8 @@ import logging
 import sys
 import time
 
+import pyupm_adxl345 as adxl345
+
 def myLogging():
 
     # ------------------------------------------------------------
@@ -50,9 +52,17 @@ if __name__=='__main__':
     description = '0x01 Main'
     logging.info(description)
 
+    adxl = adxl345.Adxl345(0)
+
     while True:
 
         time.sleep(1)
-        logging.info("Here")
+        adxl.update()
+        raw = adxl.getRawValues()
+        force = adxl.getAcceleration()
+        logging.info("Raw: %6d %6d %6d" % (raw[0], raw[1], raw[2]))
+        logging.info("Force X: %5.2f g" % (force[0]))
+        logging.info("Force Y: %5.2f g" % (force[1]))
+        logging.info("Force Z: %5.2f g\n" % (force[2]))
 
 # End of File
