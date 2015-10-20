@@ -6,3 +6,4 @@
     # apt-get install libv4l-dev
     # apt-get install install git fswebcam
     # wget http://terzo.acmesystems.it/download/webcam/mjpg-streamer.tar.gz
+    
