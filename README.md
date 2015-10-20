@@ -14,4 +14,5 @@
     # cd mjpg-streamer
     # make
     # ./mjpg_streamer -i "./input_uvc.so -f 15 -r 640x480" -o "./output_http.so -w ./www"
+    # ./mjpg_streamer -i "./input_uvc.so -f 15 -r 1280x720" -o "./output_http.so -w ./www"
     
